@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carebridge operations dashboard</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+body{margin:0}
+a{color:#0B6E5F}a:hover{color:#084F44}
+</style>
+</head>
+<body>
+<div style="min-height: 100vh; background: #F4F5F2; color: #13201D; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; display: flex; flex-wrap: wrap; align-items: stretch">
+
+<nav aria-label="Main" style="flex: 1 1 232px; box-sizing: border-box; background: #10302A; color: #FFFFFF; padding: 24px 16px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 8px">
+<svg width="32" height="32" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#1E8C79" /><path d="M8 24 C 12 15, 24 15, 28 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" /><path d="M18 8 V 15 M14.5 11.5 H 21.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" /></svg>
+<span style="font-size: 19px; font-weight: 700">Carebridge</span>
+</div>
+<div style="background: #1A403A; border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 11px; color: #B5CFC8; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600">Clinic</span>
+<span style="font-size: 14px; font-weight: 600">Sunrise Multispecialty</span>
+<span style="font-size: 12px; color: #B5CFC8">Main branch</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px">
+<a href="dashboard.html" aria-current="page" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; background: #22524A; color: #FFFFFF; text-decoration: none; font-size: 14px; font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><rect x="14" y="14" width="7" height="7" rx="1.5" /></svg>Overview</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M3 10h18M8 3v4M16 3v4" /></svg>Appointments</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.8c1.9.7 3.1 2.5 3.5 5.2" /></svg>Patients</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" /><path d="M9 8h6M9 12h6" /></svg>Billing &amp; claims</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7l9-4 9 4-9 4z" /><path d="M3 7v10l9 4 9-4V7M12 11v10" /></svg>Pharmacy &amp; inventory</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2" /><circle cx="12" cy="10" r="3" /><path d="M8 17c.8-1.8 2.2-2.6 4-2.6s3.2.8 4 2.6" /></svg>Staff</a>
+<a href="analytics.html" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" /></svg>Analytics</a>
+<a href="#" style="display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 12px; border-radius: 8px; color: #CFE3DD; text-decoration: none; font-size: 14px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" /></svg>Settings</a>
+</div>
+</nav>
+
+<main style="flex: 999 1 560px; min-width: 0; box-sizing: border-box; padding: 28px 32px 48px; display: flex; flex-direction: column; gap: 24px">
+
+<header style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h1 style="margin: 0; font-size: 28px; font-weight: 700; letter-spacing: -0.015em">Good evening, Dr. Meera</h1>
+<span style="font-size: 14px; color: #55635F">Wednesday, 4 November · Today at a glance · Updated 2 min ago</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<label for="dash-search" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">Search patients, doctors or invoices</label>
+<input id="dash-search" type="search" placeholder="Search patients, doctors, invoices" style="height: 44px; width: 280px; max-width: 100%; box-sizing: border-box; border: 1px solid #D5DAD4; border-radius: 10px; padding: 0 14px; font: inherit; font-size: 14px; background: #FFFFFF; color: #13201D">
+<button type="button" aria-label="Notifications, 4 new" style="width: 44px; height: 44px; border-radius: 10px; border: 1px solid #D5DAD4; background: #FFFFFF; color: #13201D; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15z" /><path d="M10 21h4" /></svg></button>
+<button type="button" style="height: 44px; border-radius: 10px; border: none; background: #0B6E5F; color: #FFFFFF; padding: 0 18px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer">+ New appointment</button>
+</div>
+</header>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px">
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">Appointments today</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">128</span>
+<span style="font-size: 13px; color: #55635F">94 booked · 34 walk-ins</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">Avg wait time</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">18 min</span>
+<span style="font-size: 13px; color: #55635F">Target 15 min</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">No-shows</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">6</span>
+<span style="font-size: 13px; color: #55635F">of 94 booked today</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">Bed occupancy</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">82%</span>
+<span style="font-size: 13px; color: #55635F">41 of 50 beds</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">Revenue today</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">₹3.42 L</span>
+<span style="font-size: 13px; color: #55635F">₹2.96 L collected</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 14px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #55635F; font-weight: 600">Pending claims</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 30px; font-weight: 500; letter-spacing: -0.02em">23</span>
+<span style="font-size: 13px; color: #55635F">₹6.8 L awaiting insurers</span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+<section style="flex: 2 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Live queue</h2>
+<span style="font-size: 13px; color: #55635F">Doctors on duty and patients waiting right now</span>
+</div>
+<a href="#" style="font-size: 13px; font-weight: 600">Open queue board</a>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr>
+<th scope="col" style="text-align: left; padding: 10px 12px 10px 0; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Doctor</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Current token</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Waiting</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Avg consult</th>
+<th scope="col" style="text-align: left; padding: 10px 0 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Status</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC"><div style="font-weight: 600">Dr. Anjali Rao</div><div style="font-size: 12px; color: #55635F">Cardiology</div></td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">C-14</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">2</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">12 min</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+<span style="display: inline-block; background: #FBE7DA; color: #8A3A10; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Running 25 min late</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC"><div style="font-weight: 600">Dr. Vikram Shah</div><div style="font-size: 12px; color: #55635F">Orthopaedics</div></td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">O-22</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">1</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">9 min</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+<span style="display: inline-block; background: #D7EDE8; color: #0A5A4E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">On time</span>
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC"><div style="font-weight: 600">Dr. Fatima Khan</div><div style="font-size: 12px; color: #55635F">Paediatrics</div></td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">P-31</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">1</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">7 min</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+<span style="display: inline-block; background: #D7EDE8; color: #0A5A4E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">On time</span>
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC"><div style="font-weight: 600">Dr. Arun Menon</div><div style="font-size: 12px; color: #55635F">General Medicine</div></td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">G-40</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">0</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">6 min</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+<span style="display: inline-block; background: #D7EDE8; color: #0A5A4E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Last patient</span>
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC"><div style="font-weight: 600">Dr. Neha Iyer</div><div style="font-size: 12px; color: #55635F">Dermatology</div></td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">—</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">0</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">10 min</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+
+<span style="display: inline-block; background: #ECEEEB; color: #434E4B; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Off duty</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+
+<section style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; flex-direction: column; gap: 2px; margin-bottom: 8px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Needs attention</h2>
+<span style="font-size: 13px; color: #55635F">Each alert links to the fix</span>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid #EEF0EC">
+<span style="flex: none; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #8A3A10; background: #FBE7DA; border-radius: 6px; padding: 3px 7px">High</span>
+
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.4">3 insurance claims expire in 48 hours</span>
+<span style="font-size: 12px; color: #55635F">Billing &amp; claims</span>
+<a href="#" style="font-size: 13px; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center">Review claims →</a>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid #EEF0EC">
+<span style="flex: none; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #8A3A10; background: #FBE7DA; border-radius: 6px; padding: 3px 7px">High</span>
+
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.4">IV Paracetamol below reorder level (12 left)</span>
+<span style="font-size: 12px; color: #55635F">Pharmacy</span>
+<a href="#" style="font-size: 13px; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center">Create purchase order →</a>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid #EEF0EC">
+
+<span style="flex: none; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #434E4B; background: #ECEEEB; border-radius: 6px; padding: 3px 7px">Med</span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.4">Dr. Anjali Rao running 25 min late, 2 patients waiting</span>
+<span style="font-size: 12px; color: #55635F">Live queue</span>
+<a href="#" style="font-size: 13px; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center">Notify patients →</a>
+</div>
+</div>
+
+<div style="display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-top: 1px solid #EEF0EC">
+
+<span style="flex: none; margin-top: 2px; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #434E4B; background: #ECEEEB; border-radius: 6px; padding: 3px 7px">Med</span>
+<div style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.4">2 lab reports pending for over 24 hours</span>
+<span style="font-size: 12px; color: #55635F">Lab</span>
+<a href="#" style="font-size: 13px; font-weight: 600; min-height: 32px; display: inline-flex; align-items: center">View reports →</a>
+</div>
+</div>
+
+</section>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
+<section style="flex: 2 1 560px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Patient flow today</h2>
+<span style="font-size: 13px; color: #55635F">Patients arrived vs seen, by hour</span>
+</div>
+<div style="display: flex; gap: 16px; font-size: 13px; color: #434E4B">
+<span style="display: flex; align-items: center; gap: 6px"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#0B6E5F" /></svg>Arrived</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="3" fill="#8CC7BB" /></svg>Seen</span>
+</div>
+</div>
+<svg viewBox="0 0 640 200" width="100%" role="img" aria-label="Bar chart of patients arrived and seen each hour from 8 am to 7 pm. Arrivals peak at 18 around 10 am and again at 15 around 4 pm.">
+<g stroke="#E8EBE6" stroke-width="1">
+<line x1="36" y1="180" x2="628" y2="180" />
+<line x1="36" y1="139" x2="628" y2="139" />
+<line x1="36" y1="98" x2="628" y2="98" />
+<line x1="36" y1="57" x2="628" y2="57" />
+<line x1="36" y1="16" x2="628" y2="16" />
+</g>
+<g font-family="IBM Plex Mono, monospace" font-size="11" fill="#55635F" text-anchor="end">
+<text x="28" y="184">0</text>
+<text x="28" y="143">5</text>
+<text x="28" y="102">10</text>
+<text x="28" y="61">15</text>
+<text x="28" y="20">20</text>
+</g>
+<path d="M43.7 130.8h16V180h-16ZM93.0 65.2h16V180h-16ZM142.3 32.4h16V180h-16ZM191.7 48.8h16V180h-16ZM241.0 81.6h16V180h-16ZM290.3 114.4h16V180h-16ZM339.7 122.6h16V180h-16ZM389.0 89.8h16V180h-16ZM438.3 57.0h16V180h-16ZM487.7 73.4h16V180h-16ZM537.0 130.8h16V180h-16ZM586.3 163.6h16V180h-16Z" fill="#0B6E5F" />
+<path d="M61.7 147.2h16V180h-16ZM111.0 81.6h16V180h-16ZM160.3 40.6h16V180h-16ZM209.7 57.0h16V180h-16ZM259.0 73.4h16V180h-16ZM308.3 106.2h16V180h-16ZM357.7 130.8h16V180h-16ZM407.0 98.0h16V180h-16ZM456.3 65.2h16V180h-16ZM505.7 65.2h16V180h-16ZM555.0 122.6h16V180h-16ZM604.3 155.4h16V180h-16Z" fill="#8CC7BB" />
+<g font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#55635F" text-anchor="middle">
+<text x="60.7" y="197">8a</text>
+<text x="110" y="197">9a</text>
+<text x="159.3" y="197">10a</text>
+<text x="208.7" y="197">11a</text>
+<text x="258" y="197">12p</text>
+<text x="307.3" y="197">1p</text>
+<text x="356.7" y="197">2p</text>
+<text x="406" y="197">3p</text>
+<text x="455.3" y="197">4p</text>
+<text x="504.7" y="197">5p</text>
+<text x="554" y="197">6p</text>
+<text x="603.3" y="197">7p</text>
+</g>
+</svg>
+</section>
+
+<section style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Bed occupancy</h2>
+<span style="font-size: 13px; color: #55635F">41 of 50 beds occupied</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 14px">
+<span style="font-weight: 600">General ward</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #434E4B">18 / 22</span>
+</div>
+<svg width="100%" height="10" aria-hidden="true"><rect width="100%" height="10" rx="5" fill="#E9EEEB" /><rect width="81.8%" height="10" rx="5" fill="#0B6E5F" /></svg>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 14px">
+<span style="font-weight: 600">ICU</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #434E4B">7 / 8</span>
+</div>
+<svg width="100%" height="10" aria-hidden="true"><rect width="100%" height="10" rx="5" fill="#E9EEEB" /><rect width="87.5%" height="10" rx="5" fill="#B4531C" /></svg>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 14px">
+<span style="font-weight: 600">Maternity</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #434E4B">9 / 12</span>
+</div>
+<svg width="100%" height="10" aria-hidden="true"><rect width="100%" height="10" rx="5" fill="#E9EEEB" /><rect width="75.0%" height="10" rx="5" fill="#0B6E5F" /></svg>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 14px">
+<span style="font-weight: 600">Paediatric ward</span>
+<span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; color: #434E4B">7 / 8</span>
+</div>
+<svg width="100%" height="10" aria-hidden="true"><rect width="100%" height="10" rx="5" fill="#E9EEEB" /><rect width="87.5%" height="10" rx="5" fill="#B4531C" /></svg>
+</div>
+
+<span style="font-size: 12px; color: #55635F">Bars turn orange above 85% occupancy.</span>
+</section>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #E2E5E0; border-radius: 16px; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<div style="display: flex; flex-direction: column; gap: 2px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Up next</h2>
+<span style="font-size: 13px; color: #55635F">Appointments in the next hour</span>
+</div>
+<a href="#" style="font-size: 13px; font-weight: 600">View calendar</a>
+</div>
+<div style="overflow-x: auto">
+<table style="width: 100%; min-width: 600px; border-collapse: collapse; font-size: 14px">
+<thead>
+<tr>
+<th scope="col" style="text-align: left; padding: 10px 12px 10px 0; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Time</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Patient</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Doctor</th>
+<th scope="col" style="text-align: left; padding: 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Visit type</th>
+<th scope="col" style="text-align: left; padding: 10px 0 10px 12px; font-size: 12px; font-weight: 600; color: #55635F; border-bottom: 1px solid #E2E5E0">Status</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">7:15 pm</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-weight: 600">Lakshmi S.</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Dr. Anjali Rao</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Follow-up</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+<span style="display: inline-block; background: #D7EDE8; color: #0A5A4E; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Checked in</span>
+
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">7:20 pm</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-weight: 600">Joseph D.</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Dr. Vikram Shah</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">New patient</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+<span style="display: inline-block; background: #ECEEEB; color: #434E4B; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Confirmed</span>
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">7:30 pm</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-weight: 600">Kavya R.</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Dr. Fatima Khan</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Vaccination</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+<span style="display: inline-block; background: #ECEEEB; color: #434E4B; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Confirmed</span>
+
+</td>
+</tr>
+
+<tr>
+<td style="padding: 12px 12px 12px 0; border-bottom: 1px solid #EEF0EC; font-family: 'IBM Plex Mono', ui-monospace, monospace">7:45 pm</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC; font-weight: 600">Ramesh K.</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Dr. Anjali Rao</td>
+<td style="padding: 12px; border-bottom: 1px solid #EEF0EC">Teleconsult</td>
+<td style="padding: 12px 0 12px 12px; border-bottom: 1px solid #EEF0EC">
+
+
+<span style="display: inline-block; background: #FBE7DA; color: #8A3A10; border-radius: 999px; padding: 4px 10px; font-size: 12px; font-weight: 600">Not confirmed</span>
+</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+</section>
+
+</main>
+</div>
+</body>
+</html>
