@@ -4,7 +4,23 @@ A product concept for an operations platform for multi-specialty clinics and sma
 
 **Design file:** [Carebridge — Healthcare SaaS on Figma](https://www.figma.com/design/xOE2RQsNl2PRQQIbM48lKK)
 
-## Screens
+## Designs
+
+Exported from the Figma file. Full-size images are in [`designs/`](designs/).
+
+### Operations dashboard
+![Operations dashboard](designs/02-dashboard.png)
+
+### Analytics
+![Analytics](designs/03-analytics.png)
+
+### User pain points
+![User pain points](designs/01-pain-points.png)
+
+### Component library
+Colors, typography and the reusable components behind the screens: [view the component library](designs/04-component-library.png).
+
+## Screens as web pages
 
 Open any page in a browser; there is no build step.
 
